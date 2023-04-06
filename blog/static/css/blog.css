@@ -24,7 +24,8 @@ body {
 }
 
 h1, h2, h3, h4 {
-    font-family: 'Lobster', cursive;
+    ont-family: 'Nunito', sans-serif;
+    margin-left: 0;
 }
 
 .date {
@@ -52,4 +53,8 @@ h1, h2, h3, h4 {
 
 .post h2 a, .post h2 a:visited {
     color: #000000;
+}
+
+.col-md-8 {
+    margin: 0 auto;
 }
