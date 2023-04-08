@@ -1,14 +1,17 @@
 {% extends 'blog/base.html' %}
+{% load static %}
 
 {% block content %}
     {% for post in posts %}
         <div class="post">
-            <div class="date">
-                Publicado em {{ post.published_date }} por Maik
-            </div>
             <h2>{{ post.title }}</h2>
             <p>{{ post.text|linebreaksbr|truncatewords_html:30 }}</p>
-            <a href="{% url 'post_detail' pk=post.pk %}" class="btn btn-primary btn-sm">Ler Mais</a>
+            <div class="post-footer">
+                <a href="{% url 'post_detail' pk=post.pk %}" class="btn btn-primary btn-sm custom-btn">Ler Mais</a>
+                <div class="post-info">
+                    Publicado em {{ post.published_date }} por Maik
+                </div>
+            </div>
         </div>
     {% endfor %}
 {% endblock %}
