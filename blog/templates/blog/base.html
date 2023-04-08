@@ -16,7 +16,7 @@
         {% if user.is_authenticated %}
         <li><a href="{% url 'post_new' %}" class="top-menu">+ Publicação</span></a></li>
         {% endif %}
-        <li><a href="https://forms.gle/3sLs1JKfgPDgtwyf7">Sugestão</a></li>
+        <li><a href="{% url 'sugestao' %}">Sugestão</a></li>
         <li><a href="{% url 'sobre' %}">Sobre</a></li>
     </ul>
 </nav>
