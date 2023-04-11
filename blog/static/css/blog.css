@@ -8,7 +8,7 @@ body {
 header {
 	background-color: #333;
 	color: #fff;
-	padding: 50px;
+	padding: 10px;
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
@@ -264,6 +264,8 @@ button.btn.btn-primary:focus {
     width: 200px;
     height: 50px;
 }
+
+
 
 
 
