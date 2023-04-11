@@ -10,7 +10,7 @@ from django.contrib.auth.decorators import login_required
 
 
 def post_list(request):
-    posts = Post.objects.order_by('-published_date')
+    posts = Post.objects.exclude(published_date=None).order_by('-published_date')
     return render(request, 'blog/post_list.html', {'posts': posts})
 
 
