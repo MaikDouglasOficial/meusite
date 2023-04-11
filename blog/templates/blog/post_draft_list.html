@@ -1,11 +1,26 @@
 {% extends 'blog/base.html' %}
+{% load static %}
 
 {% block content %}
-    {% for post in posts %}
-        <div class="post">
-            <p class="date">Criado em: {{ post.created_date|date:'d-m-Y' }}</p>
-            <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
-            <p>{{ post.text|truncatechars:200 }}</p>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                {% for post in posts %}
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h2 class="card-title"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+                            <div class="mt-4">
+                                <h5>Informações do post:</h5>
+                                <p><strong>Título:</strong> {{ post.title }}</p>
+                                <p><strong>Postagem:</strong> {{ post.text }}</p>
+                                <p><strong>Criado em:</strong> {{ post.created_date|date:'d-m-Y' }}</p>
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                </div>
+            </div>
         </div>
-    {% endfor %}
+    </div>
 {% endblock %}
