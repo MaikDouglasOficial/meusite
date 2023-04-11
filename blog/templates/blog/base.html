@@ -1,44 +1,44 @@
 {% load static %}
 
-<html>
+<html lang="pt-br">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>{% block title %}Blog do Maik{% endblock %}</title>
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap">
-	<link rel="stylesheet" type="text/css" href="{% static 'css/blog.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Blog do Maik{% endblock %}</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/blog.css' %}">
 </head>
 <body>
-	<header>
-		<div class="admin-menu" id="menu-lateral">
-			{% if user.is_authenticated %}
-				<ul>
-					<li><span class=>Olá {{ user.username }}!</span></li>
-					<li><a href="{% url 'post_new' %}" class="top-menu">+ Publicação</a></li>
-					<li><a href="{% url 'post_draft_list' %}" class="top-menu">Rascunhos</a></li>
-					<li><a href="{% url 'logout' %}" class="top-menu">Sair</a></li>
-				</ul>
-			{% else %}
-				<ul>
-					<li><a href="{% url 'login' %}" class="top-menu">Entrar</a></li>
-				</ul>
-			{% endif %}
-		</div>
-		<h1><a href="/" onclick="window.scrollTo(0, 0);">Blog do Maik</a></h1>
-		<nav class="menu">
-			<ul>
-				<li><a href="/" onclick="window.scrollTo(0, 0);">Home</a></li>
-				<li><a href="{% url 'sugestao' %}">Sugestão</a></li>
-				<li><a href="{% url 'sobre' %}">Sobre</a></li>
-			</ul>
-		</nav>
-	</header>
-	<main class="container">
-		{% block content %}
-		{% endblock %}
-	</main>
-	<footer>
-		<p></p>
-	</footer>
+    <header>
+        <div class="admin-menu" id="menu-lateral">
+            {% if user.is_authenticated %}
+                <ul>
+                    <li><span class=>Olá {{ user.username }}!</span></li>
+                    <li><a href="{% url 'post_new' %}" class="top-menu">+ Publicação</a></li>
+                    <li><a href="{% url 'post_draft_list' %}" class="top-menu">Rascunhos</a></li>
+                    <li><a href="{% url 'logout' %}" class="top-menu">Sair</a></li>
+                </ul>
+            {% else %}
+                <ul>
+                    <li><a href="{% url 'login' %}" class="top-menu">Entrar</a></li>
+                </ul>
+            {% endif %}
+        </div>
+        <h1><a href="/" onclick="window.scrollTo(0, 0);">Blog do Maik</a></h1>
+        <nav class="menu">
+            <ul>
+                <li><a href="/" onclick="window.scrollTo(0, 0);">Home</a></li>
+                <li><a href="{% url 'sugestao' %}">Sugestão</a></li>
+                <li><a href="{% url 'sobre' %}">Sobre</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container">
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <p></p>
+    </footer>
 </body>
 </html>
