@@ -5,7 +5,7 @@
     <h2>Novo Post</h2>
     <form method="POST" class="post-form">{% csrf_token %}
         {{ form.as_p }}
-        <button type="submit" class="save btn btn-default">Save</button>
+        <button type="submit" class="save btn btn-default">Publicar</button>
         <button type="submit" class="btn btn-secondary" name="save_draft">Salvar como rascunho</button>
     </form>
 {% endblock %}
