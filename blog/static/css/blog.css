@@ -1,272 +1,113 @@
-body {
-	font-family: 'Montserrat', sans-serif;
-	background-color: #f7f7f7;
-	margin: 0;
-	padding: 0;
+/* CSS para o corpo do site */
+.blog-body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-header {
-	background-color: #333;
-	color: #fff;
-	padding: 10px;
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	justify-content: space-between;
-	margin: 0 100px;
+/* CSS para o topo do site */
+.blog-header {
+  background-color: #1b1f25;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
 }
 
-header h1 a {
+/* CSS para o título do site */
+.blog-title {
+  margin: 0;
+  padding: 20px;
   color: #fff;
-  text-decoration: none;
-  border-bottom: none;
-  font-size: 70px;
+  font-size: 24px;
   font-weight: 700;
-  font-family: 'Darker Grotesque', sans-serif;
-  margin: 0 auto;
-  display: block;
-  width: fit-content;
-  text-align: left;
-}
-
-nav.menu {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	justify-content: center;
-	margin: 5px 0;
-}
-
-nav.menu a {
-	background-color: #333;
-	color: #fff;
-	text-decoration: none;
-	padding: 10px;
-	margin: 0 10px;
-	border-radius: 5px;
-	transition: background-color 0.3s;
-}
-
-nav.menu a:hover {
-	background-color: #fff;
-	color: #333;
-}
-
-main.container {
-	background-color: #fff;
-	padding: 20px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-	margin: 10px 100px;
-	font-size: 16px;
-	line-height: 1.6;
-}
-
-h1 {
-	font-size: 32px;
-	margin: 0;
-	padding: 0;
-	flex-grow: 1;
-}
-
-footer {
-	background-color: #;
-	color: #333;
-	padding: 5px;
-	position: fixed;
-	bottom: 0;
-	width: 100%;
-	text-align: center;
-	font-size: 10px;
-	height: 15px;
-}
-
-.custom-btn {
-  margin-bottom: 20px;
-  background-color: #333;
-  border-radius: 5px;
-  color: #fff;
-  padding: 2px 10px;
   text-transform: uppercase;
-  font-size: 14px;
-  font-weight: bold;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-  transition: all 0.2s ease-in-out;
-  text-decoration: none;
 }
 
-.custom-btn:hover {
-  background-color: #fff;
-  color: #333;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
-.menu {
-    text-align: center;
-}
-
-.menu ul {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-}
-
-.menu li {
-    list-style: none;
-    margin: 0 10px;
-}
-
-.menu a {
-    text-decoration: none;
-    color: #333;
-    font-size: 16px;
-}
-
-.menu a:hover {
-    color: #000;
-    text-decoration: underline;
-}
-
-.top-menu {
-    background-color: #8b57e3;
-    color: #fff;
-    border-radius: 5px;
-    padding: 5px 10px;
-}
-
-.post-info {
-   font-size: 13px;
-   margin-bottom: 40px;
-   margin-top: 10px;
-}
-
-.post {
-    border-bottom: 1px solid #ccc;
-    margin-bottom: 20px;
-
-}
-
-.post-form textarea {
-    height: 400px;
-    width: 100%;
-    font-size: 20px;
-}
-
-.post-form h2 {
-    font-size: 24px;
-}
-
-.admin-menu {
-  font-size: 13px;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  background-color: transparent;
-}
-
-.admin-menu a {
-  display: block;
-  color: #fff;
-  font-weight: bold;
-  margin-bottom: 10px;
-  padding: 4px 8px;
-  text-decoration: none;
-  background-color:#3498db;
-}
-
-.admin-menu a:hover {
-  color: #fff;
-}
-
-.admin-menu a:first-child {
-  margin-top: 10px;
-}
-
-.login-container {
-  width: 100%;
-  max-width: 400px;
-  margin: 0 auto;
+/* CSS para o menu do site */
+.blog-menu {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  height: calc(100vh - 70px);
+  height: 100px;
 }
 
-form {
-  width: 100%;
-  max-width: 400px;
-  background: #fff;
-  padding: 30px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.menu-list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-.form-group {
-  margin-bottom: 20px;
+.menu-item {
+  margin: 0;
+  padding: 0;
 }
 
-label {
+.menu-item a {
   display: block;
-  margin-bottom: 5px;
-  font-size: 16px;
-  font-weight: 600;
-}
-
-input[type="text"],
-input[type="password"] {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-
-button[type="submit"] {
-  background: #3498db;
+  padding: 20px;
   color: #fff;
-  padding: 10px 20px;
-  font-size: 16px;
+  text-decoration: none;
+  font-size: 12px;
   font-weight: 600;
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
+  text-transform: uppercase;
   transition: all 0.3s ease;
 }
 
-button[type="submit"]:hover {
-  background: #2980b9;
+.menu-item a:hover {
+  background-color: rgba(255,255,255,0.2);
 }
 
-.error-message {
-  color: #f00;
+.admin-menu-item {
+  display: block;
+  padding: 20px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.admin-menu-item:hover {
+  background-color: rgba(255,255,255,0.2);
+}
+
+/* CSS para o conteúdo */
+.blog-container {
+  margin-top: 120px;
+  margin-bottom: 120px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 800px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  border-radius: 10px;
+}
+
+/* CSS para o rodapé do site */
+.blog-footer {
+  background-color: #1b1f25;
+  color: #fff;
   font-size: 14px;
-  margin-top: 10px;
   text-align: center;
+  padding: 20px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
-.post-form {
-    margin: 0 auto;
-    max-width: 600px;
-    width: 100%;
-    resize: none;
+.hello-text {
+  color: blue;
+  display: block;
+  padding: 20px;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
 }
-
-button.btn.btn-primary:focus {
-    outline: none;
-}
-
-.publicar-btn {
-    background-color: transparent;
-    border: none;
-    padding: 0;
-    font: inherit;
-    cursor: pointer;
-    outline: inherit;
-    width: 200px;
-    height: 50px;
-}
-
-
-
-
-
-
