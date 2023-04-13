@@ -37,13 +37,20 @@ def post_new(request):
     return render(request, 'blog/post_edit.html', {'form': form})
 
 @login_required
+@login_required
 def post_edit(request, pk):
     post = get_object_or_404(Post, pk=pk)
     if request.method == "POST":
-        form = PostForm(request.POST, instance=post)
+        form = PostForm(request.POST, request.FILES, instance=post)  # adicionando request.FILES
         if form.is_valid():
             post = form.save(commit=False)
             post.author = request.user
+            if 'save_draft' in request.POST:
+                post.published_date = None  # define o post como rascunho
+                messages.success(request, 'Post salvo como rascunho.')
+            else:
+                post.published_date = timezone.now()
+                messages.success(request, 'Post publicado com sucesso.')
             post.save()
             return redirect('post_detail', pk=post.pk)
     else:

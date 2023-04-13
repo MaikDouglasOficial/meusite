@@ -3,7 +3,8 @@
 
 {% block content %}
     <h2>Novo Post</h2>
-    <form method="POST" class="post-form" enctype="multipart/form-data">{% csrf_token %}
+    <form method="POST" class="post-form" enctype="multipart/form-data">
+        {% csrf_token %}
         <div class="form-group">
             {{ form.title.label_tag }}
             {{ form.title }}
@@ -16,7 +17,7 @@
             {{ form.image.label_tag }}
             {{ form.image }}
         </div>
-        <button type="submit" class="save btn btn-default">Publicar</button>
-        <button type="submit" class="btn btn-secondary" name="save_draft">Salvar como rascunho</button>
+        <button type="submit" class="save btn btn-default custom-btn">Publicar</button>
+        <button type="submit" class="custom-btn" name="save_draft">Salvar como rascunho</button>
     </form>
 {% endblock %}

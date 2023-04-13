@@ -5,20 +5,28 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8">
-                {% for post in posts %}
+                {% if not posts %}
                     <div class="card mb-4">
                         <div class="card-body">
-                            <h2 class="card-title"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
-                            <div class="mt-4">
-                                <h5>Informações do post:</h5>
-                                <p><strong>Título:</strong> {{ post.title }}</p>
-                                <p><strong>Postagem:</strong> {{ post.text }}</p>
-                                <p><strong>Criado em:</strong> {{ post.created_date|date:'d-m-Y' }}</p>
-                                <hr>
-                            </div>
+                            <h2 class="card-title">Não há rascunhos no momento</h2>
                         </div>
                     </div>
-                {% endfor %}
+                {% else %}
+                    {% for post in posts %}
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h2 class="card-title"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+                                <div class="mt-4">
+                                    <h5>Informações do post:</h5>
+                                    <p><strong>Título:</strong> {{ post.title }}</p>
+                                    <p><strong>Postagem:</strong> {{ post.text }}</p>
+                                    <p><strong>Criado em:</strong> {{ post.created_date|date:'d-m-Y' }}</p>
+                                    <hr>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% endif %}
                 </div>
             </div>
         </div>

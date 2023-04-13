@@ -1,6 +1,8 @@
 {% extends "blog/base.html" %}
+{% load static %}
 
 {% block content %}
+  <h2 class="page-title">Faça login se voce for um admin</h2>
   <div class="login-container">
     <form method="post" action="{% url 'login' %}">
       {% csrf_token %}

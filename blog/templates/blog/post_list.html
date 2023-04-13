@@ -17,7 +17,7 @@
             <h2>{{ post.title }}</h2>
             <p>{{ post.text|linebreaksbr|truncatewords_html:30 }}</p>
             <div class="post-footer">
-                <a href="{% url 'post_detail' pk=post.pk %}" class="btn btn-primary btn-sm custom-btn">Ler Mais</a>
+                <a href="{% url 'post_detail' pk=post.pk %}" class="custom-btn btn-sm custom-btn">Ler Mais</a>
             </div>
         </div>
     {% endfor %}
