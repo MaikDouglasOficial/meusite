@@ -197,6 +197,7 @@ button[type="submit"]:hover {
     font-size: 24px;
     line-height: 1.5;
     font-family: sans-serif;
+
 }
 
 .post-form textarea {
@@ -204,3 +205,25 @@ button[type="submit"]:hover {
   height: 300px;
 }
 
+.default-image {
+    background-image: url('/static/img/image.jpg');
+    background-size: cover;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+.post-image {
+    float: left;
+    margin-right: 20px;
+}
+
+.post-image img {
+    max-width: 100px;
+    height: auto;
+    border-radius: 50%;
+}
+
+.post-content {
+    margin-bottom: 100px;
+}

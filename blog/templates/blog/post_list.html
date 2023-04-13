@@ -3,14 +3,21 @@
 
 {% block content %}
     {% for post in posts %}
-        <div class="post">
+        <div class="post-image">
+            {% if post.image %}
+                <img src="{{ post.image.url }}" alt="{{ post.title }}" style="width: 100px; height: 100px; border-radius: 50%;">
+            {% else %}
+                <div class="default-image"></div>
+            {% endif %}
+        </div>
+        <div class="post-content">
+            <div class="post-info">
+                Publicado em {{ post.published_date }} por Maik
+            </div>
             <h2>{{ post.title }}</h2>
             <p>{{ post.text|linebreaksbr|truncatewords_html:30 }}</p>
             <div class="post-footer">
                 <a href="{% url 'post_detail' pk=post.pk %}" class="btn btn-primary btn-sm custom-btn">Ler Mais</a>
-                <div class="post-info">
-                    Publicado em {{ post.published_date }} por Maik
-                </div>
             </div>
         </div>
     {% endfor %}
