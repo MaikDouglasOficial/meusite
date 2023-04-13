@@ -23,6 +23,7 @@
   font-size: 24px;
   font-weight: 700;
   text-transform: uppercase;
+  background-color: transparent;
 }
 
 /* CSS para o menu do site */
@@ -30,7 +31,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 100px;
+  height: 50px;
 }
 
 .menu-list {
@@ -111,3 +112,95 @@
   text-transform: uppercase;
   transition: all 0.3s ease;
 }
+
+/* CSS para o titulo do site */
+.blog-name {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+}
+
+/* CSS para o titulo do site */
+.blog-name a {
+  color: #ffff;
+  text-decoration: none;
+}
+
+/* CSS para o login do site */
+.login-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 70px);
+}
+
+form {
+  width: 100%;
+  max-width: 400px;
+  background: #fff;
+  padding: 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button[type="submit"] {
+  background: #3498db;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background: #2980b9;
+}
+
+.error-message {
+  color: #f00;
+  font-size: 14px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.post-form {
+    margin: 0 auto;
+    max-width: 600px;
+    width: 100%;
+    resize: none;
+    font-size: 24px;
+    line-height: 1.5;
+    font-family: sans-serif;
+}
+
+.post-form textarea {
+  width: 102%;
+  height: 300px;
+}
+
