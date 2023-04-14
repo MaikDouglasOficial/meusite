@@ -6,11 +6,11 @@
   <div class="login-container">
     <form method="post" action="{% url 'login' %}">
       {% csrf_token %}
-      <div class="form-group">
+      <div class="form-login">
         {{ form.username.label_tag }}
         {{ form.username }}
       </div>
-      <div class="form-group">
+      <div class="form-login">
         {{ form.password.label_tag }}
         {{ form.password }}
       </div>

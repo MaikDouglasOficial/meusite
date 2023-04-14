@@ -19,7 +19,7 @@
                                 <div class="mt-4">
                                     <h5>Informações do post:</h5>
                                     <p><strong>Título:</strong> {{ post.title }}</p>
-                                    <p><strong>Postagem:</strong> {{ post.text }}</p>
+                                    <p><strong>Postagem:</strong> {{ post.text |safe }}</p>
                                     <p><strong>Criado em:</strong> {{ post.created_date|date:'d-m-Y' }}</p>
                                     <hr>
                                 </div>
