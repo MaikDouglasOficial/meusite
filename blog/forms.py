@@ -8,5 +8,5 @@ class PostForm(forms.ModelForm):
         model = Post
         fields = ('title', 'text', 'image',)
         widgets = {
-            'text': CKEditorWidget()
+            'text': CKEditorWidget(attrs={'filebrowserUploadUrl': '/upload_image/'})
         }
