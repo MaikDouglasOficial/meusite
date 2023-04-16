@@ -19,14 +19,18 @@
         {{ form.image.label_tag }}
         {{ form.image }}
     </div>
-    <button type="submit" class="custom-btn" name="save_draft">Publicar</button>
-    <button type="submit" class="custom-btn" name="save_draft">Salvar como rascunho</button>
+    <div class="form-group">
+        <button type="submit" class="custom-btn btn-save-draft" name="save_draft">Salvar como rascunho</button>
+        <button type="submit" class="custom-btn btn-publish">Publicar</button>
+    </div>
 </form>
+
 
 <script src="{% static 'ckeditor/ckeditor.js' %}"></script>
 <script src="{% static 'ckeditor/config.js' %}"></script>
 <script>
         CKEDITOR.replace('{{ form.text.id_for_label }}');
+
 
 </script>
 {% endblock %}

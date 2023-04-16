@@ -10974,7 +10974,9 @@ input[type="password"] {
   margin-top: 30px
 }
 
-
+.text-center {
+    text-align: center;
+}
 
 
 
