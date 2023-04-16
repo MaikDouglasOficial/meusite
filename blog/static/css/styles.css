@@ -10978,5 +10978,26 @@ input[type="password"] {
     text-align: center;
 }
 
+input[type="file"] {
+  font-size: 18px;
+  padding: 8px 12px;
+}
+
+label[for="id_image"] {
+  font-size: 15px;
+  padding: 8px 12px;
+}
+
+.custom-label {
+    font-size: 15px;
+    padding: 8px 12px;
+    margin-left: -10px;
+}
+
+
+
+
+
+
 
 
