@@ -2,33 +2,40 @@
 {% load static %}
 
 {% block content %}
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8">
-                {% if not posts %}
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <h2 class="card-title">Não há rascunhos no momento</h2>
-                        </div>
-                    </div>
-                {% else %}
-                    {% for post in posts %}
-                        <div class="card mb-4">
-                            <div class="card-body">
-                                <h2 class="card-title"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
-                                <div class="mt-4">
-                                    <h5>Informações do post:</h5>
-                                    <p><strong>Título:</strong> {{ post.title }}</p>
-                                    <p><strong>Postagem:</strong> {{ post.text |safe }}</p>
-                                    <p><strong>Criado em:</strong> {{ post.created_date|date:'d-m-Y' }}</p>
-                                    <hr>
-                                </div>
-                            </div>
-                        </div>
-                    {% endfor %}
-                {% endif %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <h2 class="title-left">Rascunhos</h2>
+            {% if not posts %}
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2 class="card-title">Não há rascunhos no momento</h2>
                 </div>
             </div>
+            {% else %}
+            <div class="mt-4">
+                {% for post in posts %}
+                <div class="">
+                    <h2 class="card-title"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+                    <div class="mt-4">
+                        <h5>Informações do post:</h5>
+                        <p><strong>Título:</strong> {{ post.title }}</p>
+                        <p><strong>Postagem:</strong> {{ post.text |safe }}</p>
+                        <p><strong>Criado em:</strong> {{ post.created_date|date:'d-m-Y' }}</p>
+                        <hr>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
         </div>
     </div>
+</div>
+<style>
+        .title-left {
+            text-align: left;
+        }
+
+
+</style>
 {% endblock %}

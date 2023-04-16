@@ -2,23 +2,23 @@
 {% load static %}
 
 {% block content %}
-  <h2 class="page-title">Faça login se voce for um admin</h2>
-  <div class="login-container">
+<h2 style="margin-bottom: 20px;">Faça login</h2>
+<div class="login-container">
     <form method="post" action="{% url 'login' %}">
-      {% csrf_token %}
-      <div class="form-login">
-        {{ form.username.label_tag }}
-        {{ form.username }}
-      </div>
-      <div class="form-login">
-        {{ form.password.label_tag }}
-        {{ form.password }}
-      </div>
-      {% if form.errors %}
+        {% csrf_token %}
+        <div class="form-login">
+            {{ form.username.label_tag }}
+            {{ form.username }}
+        </div>
+        <div class="form-login">
+            {{ form.password.label_tag }}
+            {{ form.password }}
+        </div>
+        {% if form.errors %}
         <div class="error-message">Seu nome de usuário ou senha estão incorretos. Tente novamente.</div>
-      {% endif %}
-      <button type="submit">Entrar</button>
-      <input type="hidden" name="next" value="{{ next }}" />
+        {% endif %}
+        <button type="submit">Entrar</button>
+        <input type="hidden" name="next" value="{{ next }}"/>
     </form>
-  </div>
+</div>
 {% endblock %}
