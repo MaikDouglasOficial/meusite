@@ -3,7 +3,7 @@ Django==3.2.18
 django-ckeditor==6.3.2
 django-js-asset==2.0.0
 jsmin==3.0.1
-Pillow==9.5.0
+Pillow==8.4.0
 sorl-thumbnail==12.9.0
 sqlparse==0.4.3
 tzdata==2023.3
