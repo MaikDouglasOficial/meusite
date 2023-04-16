@@ -1,4 +1,4 @@
-asgiref==3.6.0
+asgiref==3.4.1
 Django==4.2
 django-ckeditor==6.5.1
 django-froala-editor==4.0.18
