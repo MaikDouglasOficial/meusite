@@ -289,5 +289,10 @@ button[type="submit"]:hover {
   text-decoration: none;
 }
 
+.form-text textarea {
+    max-width: 100%;
+    width: 100%;
+}
+
 
 
