@@ -4,6 +4,6 @@ django-ckeditor==6.3.2
 django-js-asset==2.0.0
 jsmin==3.0.1
 Pillow==8.4.0
-sorl-thumbnail==12.9.0
+sorl-thumbnail==12.8.0
 sqlparse==0.4.3
 tzdata==2023.3
