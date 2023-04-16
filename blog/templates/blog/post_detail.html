@@ -6,8 +6,8 @@
 <a href="{% url 'post_edit' pk=post.pk %}" class="custom-btn custom-btn-secondary">Editar</a>
 <a href="{% url 'post_remove' pk=post.pk %}" class="custom-btn custom-btn-secondary">Excluir</a>
 {% endif %}
-<h2>Título: {{ post.title }}</h2>
-<p>Postagem: {{ post.text|safe|linebreaksbr }}</p>
+<h2>{{ post.title }}</h2>
+<p>{{ post.text|safe|linebreaksbr }}</p>
 {% if user.is_authenticated %}
 {% if not post.published_date %}
 {% if post.created_date %}
