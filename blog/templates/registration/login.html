@@ -2,22 +2,22 @@
 {% load static %}
 
 {% block content %}
-<h2 style="margin-bottom: 20px;">Faça login</h2>
+<h2 style="margin-bottom: 40px;">Faça login</h2>
 <div class="login-container">
     <form method="post" action="{% url 'login' %}">
         {% csrf_token %}
-        <div class="form-login">
+        <div class="form-text">
             {{ form.username.label_tag }}
             {{ form.username }}
         </div>
-        <div class="form-login">
+        <div class="form-text">
             {{ form.password.label_tag }}
             {{ form.password }}
         </div>
         {% if form.errors %}
         <div class="error-message">Seu nome de usuário ou senha estão incorretos. Tente novamente.</div>
         {% endif %}
-        <button type="submit">Entrar</button>
+         <button type="submit" class="custom-btn btn-publish d-block">Entrar</button>
         <input type="hidden" name="next" value="{{ next }}"/>
     </form>
 </div>
