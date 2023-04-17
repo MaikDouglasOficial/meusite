@@ -15,7 +15,7 @@
         Publicado em {{ post.published_date }} por Maik
     </div>
     <h2>{{ post.title }}</h2>
-    <p>{{ post.text|safe|linebreaksbr|truncatewords_html:40 }}</p>
+    <p>{{ post.text|safe|linebreaksbr|truncatewords_html:35 }}</p>
     <div class="post-footer">
         <a href="{% url 'post_detail' pk=post.pk %}" class="custom-btn btn-sm custom-btn">Ler Mais</a>
     </div>
