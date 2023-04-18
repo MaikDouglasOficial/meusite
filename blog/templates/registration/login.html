@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block content %}
-<h2 style="margin-bottom: 40px;">Faça login</h2>
+<h2 class="text-center" style="margin-bottom: 70px;">Faça Login</h2>
 <div class="login-container">
     <form method="post" action="{% url 'login' %}">
         {% csrf_token %}

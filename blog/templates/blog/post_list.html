@@ -2,23 +2,34 @@
 {% load static %}
 
 {% block content %}
-{% for post in posts %}
-<div class="post-image">
-    {% if post.image %}
-    <img src="{{ post.image.url }}" alt="{{ post.title }}">
-    {% else %}
-    <img src="{% static 'img/image.jpg' %}" alt="{{ post.title }}">
-    {% endif %}
+<div class="container">
+    <div class="row">
+        {% for post in posts %}
+        <div class="col-md-6 col-lg-6 col-xl-6 mb-4">
+            <div class="card h-100">
+                {% if post.image %}
+                <img src="{{ post.image.url }}" class="card-img-top" alt="{{ post.title }}">
+                {% else %}
+                <img src="{% static 'img/image.jpg' %}" class="card-img-top" alt="{{ post.title }}">
+                {% endif %}
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">{{ post.title }}</h5>
+                    <p class="card-text flex-grow-1">{{ post.text|safe|truncatewords_html:35 }}</p>
+                    <a href="{% url 'post_detail' pk=post.pk %}" class="btn btn-primary mt-auto">Ler mais</a>
+                </div>
+                <div class="card-footer text-muted">
+    Publicado em {{ post.published_date }} por {{ request.user.username }}
 </div>
-<div class="post-content">
-    <div class="post-info">
-        Publicado em {{ post.published_date }} por Maik
-    </div>
-    <h2>{{ post.title }}</h2>
-    <p>{{ post.text|safe|linebreaksbr|truncatewords_html:35 }}</p>
-    <div class="post-footer">
-        <a href="{% url 'post_detail' pk=post.pk %}" class="custom-btn btn-sm custom-btn">Ler Mais</a>
+            </div>
+        </div>
+        {% endfor %}
+        <style>
+            .card-img-top {
+  object-fit: cover;
+  height: 300px;
+}
+
+        </style>
     </div>
 </div>
-{% endfor %}
 {% endblock %}
