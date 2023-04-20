@@ -1,0 +1,22 @@
+
+    html, body {
+        overflow-x: hidden;
+    }
+
+    .post-form {
+        background-color: #f5f5f5;
+        padding: 20px;
+        border-radius: 5px;
+    }
+
+    .form-control {
+        border-radius: 5px;
+    }
+
+    .btn-save-draft {
+        margin-right: 10px;
+    }
+
+    .btn-publish {
+        margin-left: 10px;
+    }
