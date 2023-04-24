@@ -22,18 +22,20 @@ def post_detail(request, pk):
 @login_required
 def post_new(request):
     if request.method == "POST":
-        form = PostForm(request.POST, request.FILES)  # adicionando request.FILES
+        form = PostForm(request.POST, request.FILES)
         if form.is_valid():
             post = form.save(commit=False)
             post.author = request.user
             if 'save_draft' in request.POST:
-                post.published_date = None  # define o post como rascunho
+                post.published_date = None
                 messages.success(request, 'Post salvo como rascunho.')
+                post.save()
+                return redirect('post_draft_list')  # redireciona para a lista de rascunhos
             else:
                 post.published_date = timezone.now()
                 messages.success(request, 'Post publicado com sucesso.')
-            post.save()
-            return redirect('post_detail', pk=post.pk)
+                post.save()
+                return redirect('post_detail', pk=post.pk)
     else:
         form = PostForm()
     return render(request, 'blog/post_edit.html', {'form': form})
