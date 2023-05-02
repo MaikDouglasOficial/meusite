@@ -36,4 +36,4 @@ class Comment(models.Model):
     def get_comment_count(self):
         return self.comments.count()
     def __str__(self):
-        return self.autor
+        return self.Autor
