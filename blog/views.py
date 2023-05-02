@@ -1,22 +1,31 @@
-from django.shortcuts import render
-from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.utils import timezone
-from .forms import PostForm
-from .models import Post
+from .forms import PostForm, CommentForm
+from .models import Post, Comment
 from django.shortcuts import render, get_object_or_404
 from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
 
 
 def post_list(request):
-    posts = Post.objects.exclude(published_date=None).order_by('-published_date')
-    return render(request, 'blog/post_list.html', {'posts': posts})
+    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
+    comments = Comment.objects.filter(approved_comment=True)
+    return render(request, 'blog/post_list.html', {'posts': posts, 'comments': comments})
 
 
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
-    return render(request, 'blog/post_detail.html', {'post': post})
+    comment_form = CommentForm()
+
+    if request.method == 'POST':
+        comment_form = CommentForm(request.POST)
+        if comment_form.is_valid():
+            comment = comment_form.save(commit=False)
+            comment.post = post
+            comment.save()
+            return redirect('comment_added')
+
+    return render(request, 'blog/post_detail.html', {'post': post, 'comment_form': comment_form})
 
 
 @login_required
@@ -39,7 +48,6 @@ def post_new(request):
     else:
         form = PostForm()
     return render(request, 'blog/post_edit.html', {'form': form})
-
 
 
 @login_required
@@ -90,3 +98,24 @@ def post_remove(request, pk):
     post = get_object_or_404(Post, pk=pk)
     post.delete()
     return redirect('post_draft_list')
+
+
+@login_required
+def add_comment_to_post(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.post = post
+            comment.save()
+            messages.success(request,
+                             'Muito obrigado por comentar! Seu comentário será avaliado pela administração e aparecerá em breve.')
+            return redirect('add_comment_to_post', pk=post.pk)
+    else:
+        form = CommentForm()
+    return render(request, 'blog/add_comment_to_post.html', {'form': form})
+
+
+def comment_added(request):
+    return render(request, 'blog/comment_added.html')

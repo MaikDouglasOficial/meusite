@@ -1,0 +1,32 @@
+.comment-form {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  text-align: left;
+}
+
+.comment-form input[type="text"][name="Autor"],
+.comment-form textarea[name="Comentário"] {
+  width: 100%;
+  max-width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+}
+
+.comment-form button[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.comment-form button[type="submit"]:hover {
+  background-color: #45a049;
+}

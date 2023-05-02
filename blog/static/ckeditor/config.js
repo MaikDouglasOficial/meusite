@@ -36,3 +36,17 @@ CKEDITOR.editorConfig = function( config ) {
 	// Simplify the dialog windows.
 	config.removeDialogTabs = 'image:advanced;link:advanced';
 };
+
+CKEDITOR.on('instanceReady', function(evt) {
+    var editor = evt.editor;
+
+    editor.dataProcessor.htmlFilter.addRules({
+        elements: {
+            $: function(element) {
+                if (element.name == 'img') {
+                    element.addClass('ckeditor');
+                }
+            }
+        }
+    });
+});
