@@ -13,3 +13,10 @@
         border-radius: 5px;
     }
 
+    @media screen and (max-width: 480px) {
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
