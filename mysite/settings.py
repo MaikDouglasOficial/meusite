@@ -12,7 +12,7 @@ SECRET_KEY = 'django-insecure-iyyw!st-tgvc&+cwu(8ak^+1d$xdmrjq=w)1vgw%u1p9kg^9)k
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com, meusite-hpgh.onrender.com']
+ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com', 'meusite-hpgh.onrender.com']
 
 # Application definition
 
