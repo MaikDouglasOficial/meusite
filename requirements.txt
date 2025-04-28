@@ -7,3 +7,4 @@ Pillow==8.4.0
 sorl-thumbnail==12.8.0
 sqlparse==0.4.3
 tzdata==2023.3
+gunicorn
